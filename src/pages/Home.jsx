@@ -9,7 +9,7 @@ import {
 import debounce from "lodash-es/debounce";
 const searchTimeoutInMs = 500;
 
-export default function WeatherApp() {
+export default function Home() {
   const [location, setLocation] = React.useState("");
   const [isSearching, setIsSearching] = React.useState(false);
   const [units, setUnits] = React.useState("metric");
@@ -54,9 +54,8 @@ export default function WeatherApp() {
             <Search
               location={location}
               isSearching={isSearching}
-              onLocationChange={
-                (event) => handleLocationChange(event.target.value)
-                // setDebouncedSearchTerm(event.target.value)
+              onLocationChange={(event) =>
+                handleLocationChange(event.target.value)
               }
             />
             <div className="divide-light-blue-400 m-auto mt-4 h-auto w-full divide-y-2 overflow-hidden rounded-lg shadow-lg md:w-3/5 lg:w-1/2">
